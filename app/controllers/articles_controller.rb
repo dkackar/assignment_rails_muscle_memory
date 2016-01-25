@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
     if @article.update(whitelisted_params)
       redirect_to article_path(@article)
     else
-      redirect_to edit_article_path
+      redirect_to edit_article_path(@article)
     end
   end
 
@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
     if @article.save
        redirect_to article_path(@article)
     else
-        render new_article_path
+       render new_article_path
     end        
   end 
 
